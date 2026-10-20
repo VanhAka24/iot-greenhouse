@@ -27,16 +27,16 @@ Nhóm: Cá nhân (23110300)
 
 ## 3. Bảng chân kết nối nhà kính (Schematic trang 4 - ESP32)
 
-| Tên thiết bị / Linh kiện | Ký hiệu / Đường tín hiệu | Chân GPIO ESP32 | Linh kiện trung gian | Trang Schematic |
+| Tên thiết bị / Linh kiện | Ký hiệu / Đường tín hiệu | Chân GPIO ESP32 | Linh kiện trung gian 
 |---|---|---|---|---|
-| Cảm biến Nhiệt độ/Độ ẩm | `DATA_RH` | GPIO 23 | Điện trở kéo lên `R27` | Trang 4 |
-| Màn hình / Cảm biến I²C | `SDA` / `SCL` | GPIO 21 / GPIO 22 | Điện trở gắn dòng | Trang 4 |
-| Đèn LED đỏ (RED_LED) | `LED_R` | GPIO 25 | Transistor `MMBT3904` (`Q18`) | Trang 4 |
-| Đèn LED xanh (GREEN_LED)| `LED_G` | GPIO 26 | Transistor `MMBT3904` (`Q12`) | Trang 4 |
-| Động cơ 1 (MOTOR 1) | `MOTOR1_INT1` / `MOTOR1_INT2` | GPIO 32 / GPIO 33 | IC công suất `44950LITR` (`U2`) | Trang 4 |
-| Động cơ 2 (MOTOR 2) | `MOTOR2_INT1` / `MOTOR2_INT2` | GPIO 18 / GPIO 19 | IC công suất `44950LITR` (`U3`) | Trang 4 |
-| Dải LED (ARRAY_LED3) | `ARRAY_LED3` | GPIO 14 | Mạch đệm `N531` (`U11`) | Trang 4 |
-| Dải LED (ARRAY_LED4) | `ARRAY_LED4` | GPIO 13 | Mạch đệm `N531` (`U12`) | Trang 4 |
+| Cảm biến Nhiệt độ/Độ ẩm | `DATA_RH` | GPIO 23 | Điện trở kéo lên `R27` | 
+| Màn hình / Cảm biến I²C | `SDA` / `SCL` | GPIO 21 / GPIO 22 | Điện trở gắn dòng | 
+| Đèn LED đỏ (RED_LED) | `LED_R` | GPIO 25 | Transistor `MMBT3904` (`Q18`) | 
+| Đèn LED xanh (GREEN_LED)| `LED_G` | GPIO 26 | Transistor `MMBT3904` (`Q12`) |
+| Động cơ 1 (MOTOR 1) | `MOTOR1_INT1` / `MOTOR1_INT2` | GPIO 32 / GPIO 33 | IC công suất `44950LITR` (`U2`) | 
+| Động cơ 2 (MOTOR 2) | `MOTOR2_INT1` / `MOTOR2_INT2` | GPIO 18 / GPIO 19 | IC công suất `44950LITR` (`U3`) | 
+| Dải LED (ARRAY_LED3) | `ARRAY_LED3` | GPIO 14 | Mạch đệm `N531` (`U11`) | 
+| Dải LED (ARRAY_LED4) | `ARRAY_LED4` | GPIO 13 | Mạch đệm `N531` (`U12`) | 
 
 ## 4. Giải thích ngắn theo mẫu
 
