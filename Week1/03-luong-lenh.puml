@@ -1,0 +1,69 @@
+@startuml
+skinparam backgroundColor white
+skinparam shadowing false
+skinparam defaultFontName SansSerif
+skinparam defaultFontSize 16
+skinparam ArrowColor #374151
+skinparam ParticipantBackgroundColor #F8FAFC
+skinparam ParticipantBorderColor #374151
+skinparam sequenceLifeLineBorderColor #94A3B8
+skinparam noteBackgroundColor #F8FAFC
+skinparam noteBorderColor #94A3B8
+title SD-02 | Gửi lệnh và nhận kết quả thực hiện
+hide footbox
+autonumber
+actor "Người vận hành" as User
+participant "ui : WebUI" as UI
+participant "app : ApplicationService" as App
+participant "broker : MQTTBroker" as Broker
+participant "node23110300 : Firmware" as Node
+note over App, Node
+node23110300 đăng ký 23110300/node23110300/cmd;
+app đăng ký 23110300/node23110300/ack.
+end note
+User ->> UI : chọn Bật LED
+UI -> App : requestCommand(LED, ON)
+activate App
+App -> App : authorize(user, action)
+alt không có quyền
+App --> UI : forbidden
+UI ->> User : hiển thị từ chối
+else có quyền
+App -> App : createPendingCommand(c001)
+App ->> Broker : PUBLISH cmd(c001, LED, ON)
+App --> UI : accepted(c001, pending)
+end
+deactivate App
+opt lệnh c001 đã được chấp nhận
+Broker ->> Node : deliverCommand(c001, LED, ON)
+activate Node
+Node -> Node : validateCommandAndConditions()
+alt lệnh hợp lệ và được phép thực hiện
+Node -> Node : setGPIO(LED, ON)
+Node ->> Broker : PUBLISH ack(c001, applied)
+else lệnh không hợp lệ hoặc bị khóa
+Node ->> Broker : PUBLISH ack(c001, rejected)
+end
+deactivate Node
+alt ack đến trước hạn chờ
+Broker ->> App : deliverAck(c001, result)
+activate App
+App -> App : updateCommandResult(c001, result)
+deactivate App
+else hết hạn chờ, chưa nhận ack
+App -> App : markUnconfirmed(c001)
+end
+UI -> App : getCommandStatus(c001)
+activate App
+App --> UI : applied / rejected / unconfirmed
+deactivate App
+UI ->> User : hiển thị kết quả
+end
+legend bottom
+cmd = 23110300/node23110300/cmd; ack = 23110300/node23110300/ack.
+accepted: dịch vụ nhận yêu cầu; applied: node báo đã đặt đầu ra.
+unconfirmed không đồng nghĩa tải đang tắt. Chưa có phản hồi vật lý từ tải.
+Ca minh họa chưa xử lý ack đến muộn hoặc lệnh trùng.
+Timeout trong hình là mất/chậm ack sau khi node nhận lệnh; chưa bao quát mất lệnh.
+endlegend
+@enduml

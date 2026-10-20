@@ -1,0 +1,34 @@
+@startuml
+skinparam backgroundColor white
+skinparam shadowing false
+skinparam defaultFontName SansSerif
+skinparam defaultFontSize 16
+skinparam ArrowColor #374151
+skinparam ParticipantBackgroundColor #F8FAFC
+skinparam ParticipantBorderColor #374151
+skinparam sequenceLifeLineBorderColor #94A3B8
+skinparam noteBackgroundColor #F8FAFC
+skinparam noteBorderColor #94A3B8
+title UC-01 | Chức năng hệ thống nhà kính
+caption Phạm vi: mô hình học tập ESP32 + DHT11 + LED
+skinparam usecaseBackgroundColor white
+skinparam usecaseBorderColor #374151
+skinparam rectangleBackgroundColor #F8FAFC
+left to right direction
+actor "Người vận hành" as Operator
+rectangle "Hệ thống giám sát và điều khiển nhà kính" {
+usecase "UC-01\nXem số đo hiện tại" as Current
+usecase "UC-02\nXem lịch sử số đo" as History
+usecase "UC-03\nBật / tắt đầu ra thử" as Command
+usecase "UC-04\nXem kết quả thực hiện lệnh" as Result
+}
+Operator -- Current
+Operator -- History
+Operator -- Command
+Operator -- Result
+legend bottom
+Actor: vai trò ngoài hệ thống. Ellipse: chức năng người dùng sử dụng.
+Khung: ranh giới hệ thống. Đường liền: quan hệ tham gia.
+Không mô tả thứ tự xử lý hoặc dây nối phần cứng.
+endlegend
+@enduml

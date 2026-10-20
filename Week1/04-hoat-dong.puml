@@ -1,0 +1,51 @@
+@startuml
+skinparam backgroundColor white
+skinparam shadowing false
+skinparam defaultFontName SansSerif
+skinparam defaultFontSize 16
+skinparam ArrowColor #374151
+skinparam ParticipantBackgroundColor #F8FAFC
+skinparam ParticipantBorderColor #374151
+skinparam sequenceLifeLineBorderColor #94A3B8
+skinparam noteBackgroundColor #F8FAFC
+skinparam noteBorderColor #94A3B8
+title AD-01 | Xử lý một yêu cầu điều khiển
+skinparam activityBackgroundColor #F8FAFC
+skinparam activityBorderColor #374151
+skinparam activityDiamondBackgroundColor white
+skinparam activityDiamondBorderColor #374151
+skinparam conditionStyle InsideDiamond
+|Dịch vụ ứng dụng|
+start
+:Nhận yêu cầu bật / tắt LED;
+if (Người dùng\ncó quyền?) then ([Không])
+:Trả kết quả từ chối;
+|Giao diện|
+:Hiển thị yêu cầu bị từ chối;
+stop
+else ([Có])
+|Dịch vụ ứng dụng|
+:Tạo cmd_id và ghi trạng thái pending;
+:Gửi lệnh qua MQTT;
+endif
+|ESP32|
+:Nhận và kiểm tra lệnh;
+if (Lệnh hợp lệ\nvà được phép\nthực hiện?) then ([Có])
+:Đặt GPIO đầu ra;
+:Gửi ack với result = applied;
+else ([Không])
+:Gửi ack với result = rejected;
+endif
+|Dịch vụ ứng dụng|
+:Nhận ack và cập nhật theo cmd_id;
+|Giao diện|
+:Hiển thị kết quả;
+stop
+legend bottom
+Chấm đen: bắt đầu; vòng tròn kép: kết thúc; hình thoi: rẽ nhánh / hợp luồng.
+Chữ nhật bo góc: hành động. [Có] / [Không]: điều kiện trên nhánh ra.
+Lane: thành phần chịu trách nhiệm, không phải vị trí thiết bị.
+Mũi tên đầu hở: luồng điều khiển. Kết thúc là hết một lần xử lý, không tắt hệ thống.
+Phạm vi: kết nối hoạt động và ack tới dịch vụ. Timeout xem SD-02.
+endlegend
+@enduml

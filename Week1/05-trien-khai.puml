@@ -1,0 +1,45 @@
+@startuml
+skinparam backgroundColor white
+skinparam shadowing false
+skinparam defaultFontName SansSerif
+skinparam defaultFontSize 16
+skinparam ArrowColor #374151
+skinparam ParticipantBackgroundColor #F8FAFC
+skinparam ParticipantBorderColor #374151
+skinparam sequenceLifeLineBorderColor #94A3B8
+skinparam noteBackgroundColor #F8FAFC
+skinparam noteBorderColor #94A3B8
+title DD-01 | Triển khai hệ thử nghiệm trên kit
+skinparam nodeBackgroundColor #F8FAFC
+skinparam nodeBorderColor #374151
+skinparam artifactBackgroundColor white
+left to right direction
+node "ESP32" as ESP <<device>> {
+artifact "firmware.bin\nnode23110300" as Firmware
+}
+note top of ESP
+Ngoại vi: DHT11 và LED + điện trở.
+Kết nối điện xem schematic / pin map riêng.
+end note
+node "PC cá nhân" as Host <<device>> {
+node "Hệ điều hành" <<executionEnvironment>> {
+artifact "mosquitto\nExecutable MQTT broker" as Broker
+artifact "app.py\nDịch vụ ứng dụng" as App
+artifact "measurements.sqlite\nTệp dữ liệu" as DB
+}
+}
+node "Máy người dùng" as Client <<device>> {
+node "Trình duyệt" <<executionEnvironment>> {
+artifact "index.html / app.js\nGiao diện web" as Web
+}
+}
+ESP -- Host : Wi-Fi / MQTT over TCP
+Host -- Client : HTTP(S) over TCP/IP
+legend bottom
+Node: tài nguyên triển khai. «device»: thiết bị; «executionEnvironment»: môi trường chạy.
+Artifact: sản phẩm phần mềm triển khai. Đường liền: đường truyền giữa các node.
+Máy người dùng có thể chính là host; tách trong hình để thấy vai trò.
+Tên artifact minh họa một phương án Python + SQLite; thay theo phần mềm nhóm chọn.
+LED là ngoại vi thụ động, không mô hình hóa như node triển khai phần mềm.
+endlegend
+@enduml

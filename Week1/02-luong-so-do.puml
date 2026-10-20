@@ -1,0 +1,67 @@
+@startuml
+skinparam backgroundColor white
+skinparam shadowing false
+skinparam defaultFontName SansSerif
+skinparam defaultFontSize 16
+skinparam ArrowColor #374151
+skinparam ParticipantBackgroundColor #F8FAFC
+skinparam ParticipantBorderColor #374151
+skinparam sequenceLifeLineBorderColor #94A3B8
+skinparam noteBackgroundColor #F8FAFC
+skinparam noteBorderColor #94A3B8
+title SD-01 | Thu nhận và hiển thị một số đo
+hide footbox
+autonumber
+participant "sensor : DHT11Driver" as Sensor
+participant "node23110300 : Firmware" as Node
+participant "broker : MQTTBroker" as Broker
+participant "app : ApplicationService" as App
+participant "store : MeasurementStore" as Store
+participant "ui : WebUI" as UI
+note over Node, App
+Tiền điều kiện: MQTT đã kết nối;
+app đăng ký 23110300/node23110300/telemetry.
+payload = nội dung bản tin (số đo, thời điểm, trạng thái).
+end note
+note over Sensor, Node
+read() là lời gọi driver trên ESP32;
+không biểu diễn xung điện trên chân DATA.
+end note
+activate Node
+Node -> Sensor : read()
+activate Sensor
+Sensor --> Node : temperature, humidity, status
+deactivate Sensor
+Node -> Node : buildTelemetry()
+Node ->> Broker : PUBLISH telemetry(payload)
+deactivate Node
+Broker ->> App : deliverTelemetry(payload)
+activate App
+App -> App : validate(payload)
+alt payload hợp lệ
+App -> Store : save(measurement)
+activate Store
+Store --> App : saved
+deactivate Store
+else payload không hợp lệ
+App -> App : recordRejectedPayload()
+end
+deactivate App
+UI -> App : getLatest(node23110300)
+activate App
+App -> Store : findLatest(node23110300)
+activate Store
+Store --> App : measurement / empty
+deactivate Store
+App --> UI : value, measuredAt, status
+deactivate App
+note over App, UI
+Không có bản ghi: hiển thị "Chưa có dữ liệu".
+Bản ghi cũ: giữ thời điểm đo, không coi là số đo mới.
+end note
+legend bottom
+Đầu mũi tên đặc: gọi đồng bộ; đầu hở: bất đồng bộ; nét đứt: trả về.
+Thanh đứng: thời gian thực thi. alt: nhánh loại trừ nhau theo điều kiện [guard].
+telemetry = 23110300/node23110300/telemetry. Chưa mô tả reconnect/QoS retry.
+endlegend
+@enduml
