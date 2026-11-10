@@ -1,0 +1,222 @@
+10:15:02.265 > [SAFE] beat=404 t=202150 state=CHAY mqtt=1 queue=0 dropped=0 sent=100
+10:15:02.265 > [MQTT] Publish thanh cong seq=101
+10:15:04.278 > [SAFE] beat=408 t=204150 state=CHAY mqtt=1 queue=0 dropped=0 sent=101
+10:15:04.278 > [MQTT] Publish thanh cong seq=102
+10:15:06.296 > [SAFE] beat=412 t=206150 state=CHAY mqtt=1 queue=0 dropped=0 sent=102
+10:15:06.296 > [MQTT] Publish thanh cong seq=103
+10:15:08.271 > [SAFE] beat=416 t=208150 state=CHAY mqtt=1 queue=0 dropped=0 sent=103
+10:15:08.271 > [MQTT] Publish thanh cong seq=104
+10:15:10.138 > [SAFE] beat=420 t=210150 state=CHAY mqtt=1 queue=0 dropped=0 sent=104
+10:15:10.138 > [MQTT] Publish thanh cong seq=105
+10:15:12.147 > [SAFE] beat=424 t=212150 state=CHAY mqtt=1 queue=0 dropped=0 sent=105
+10:15:12.147 > [MQTT] Publish thanh cong seq=106
+10:15:14.274 > [SAFE] beat=428 t=214150 state=CHAY mqtt=1 queue=0 dropped=0 sent=106
+10:15:14.274 > [MQTT] Publish thanh cong seq=107
+10:15:16.255 > [SAFE] beat=432 t=216150 state=CHAY mqtt=1 queue=0 dropped=0 sent=107
+10:15:16.255 > [MQTT] Publish thanh cong seq=108
+10:15:18.223 > [SAFE] beat=436 t=218150 state=CHAY mqtt=1 queue=0 dropped=0 sent=108
+10:15:18.223 > [MQTT] Publish thanh cong seq=109
+10:15:20.139 > [SAFE] beat=440 t=220150 state=CHAY mqtt=1 queue=0 dropped=0 sent=109
+10:15:20.139 > [MQTT] Publish thanh cong seq=110
+10:15:22.157 > [SAFE] beat=444 t=222150 state=CHAY mqtt=1 queue=0 dropped=0 sent=110
+10:15:22.157 > [MQTT] Publish thanh cong seq=111
+10:15:24.234 > [SAFE] beat=448 t=224150 state=CHAY mqtt=1 queue=0 dropped=0 sent=111
+10:15:24.234 > [MQTT] Publish thanh cong seq=112
+10:15:26.127 > [SAFE] beat=452 t=226150 state=CHAY mqtt=1 queue=0 dropped=0 sent=112
+10:15:26.127 > [MQTT] Publish thanh cong seq=113
+10:15:28.230 > [SAFE] beat=456 t=228150 state=CHAY mqtt=1 queue=0 dropped=0 sent=113
+10:15:28.230 > [MQTT] Publish thanh cong seq=114
+10:15:30.255 > [SAFE] beat=460 t=230150 state=CHAY mqtt=1 queue=0 dropped=0 sent=114
+10:15:30.255 > [MQTT] Publish thanh cong seq=115
+10:15:32.132 > [SAFE] beat=464 t=232150 state=CHAY mqtt=1 queue=0 dropped=0 sent=115
+10:15:32.132 > [MQTT] Publish thanh cong seq=116
+10:15:34.125 > [SAFE] beat=468 t=234150 state=CHAY mqtt=1 queue=0 dropped=0 sent=116
+10:15:34.125 > [MQTT] Publish thanh cong seq=117
+10:15:36.273 > [SAFE] beat=472 t=236150 state=CHAY mqtt=1 queue=0 dropped=0 sent=117
+10:15:36.273 > [MQTT] Publish thanh cong seq=118
+10:15:38.182 > [SAFE] beat=476 t=238150 state=CHAY mqtt=1 queue=0 dropped=0 sent=118
+10:15:38.182 > [MQTT] Publish thanh cong seq=119
+10:15:40.173 > [SAFE] beat=480 t=240150 state=CHAY mqtt=1 queue=0 dropped=0 sent=119
+10:15:40.173 > [MQTT] Publish thanh cong seq=120
+10:15:42.268 > [SAFE] beat=484 t=242150 state=CHAY mqtt=1 queue=0 dropped=0 sent=120
+10:15:42.268 > [MQTT] Publish thanh cong seq=121
+10:15:44.274 > [SAFE] beat=488 t=244150 state=CHAY mqtt=1 queue=0 dropped=0 sent=121
+10:15:44.274 > [MQTT] Publish thanh cong seq=122
+10:15:46.181 > [SAFE] beat=492 t=246150 state=CHAY mqtt=1 queue=0 dropped=0 sent=122
+10:15:46.181 > [MQTT] Publish thanh cong seq=123
+10:15:48.170 > [SAFE] beat=496 t=248150 state=CHAY mqtt=1 queue=0 dropped=0 sent=123
+10:15:48.170 > [MQTT] Publish thanh cong seq=124
+10:15:50.297 > [SAFE] beat=500 t=250150 state=CHAY mqtt=1 queue=0 dropped=0 sent=124
+10:15:50.297 > [MQTT] Publish thanh cong seq=125
+10:15:52.100 > [SAFE] beat=504 t=252150 state=CHAY mqtt=0 queue=1 dropped=0 sent=124
+10:15:52.100 > [MQTT] Dang ket noi toi broker...
+10:15:52.100 > [MQTT] Ket noi that bai, rc=-2 (thu lai sau 3s)
+10:15:54.166 > [SAFE] beat=508 t=254150 state=CHAY mqtt=0 queue=2 dropped=0 sent=124
+10:15:56.135 > [SAFE] beat=512 t=256150 state=CHAY mqtt=0 queue=3 dropped=0 sent=124
+10:15:56.135 > [MQTT] Dang ket noi toi broker...
+10:15:56.135 > [MQTT] Ket noi that bai, rc=-2 (thu lai sau 3s)
+10:15:58.203 > [SAFE] beat=516 t=258150 state=CHAY mqtt=0 queue=4 dropped=0 sent=124
+10:16:00.174 > [SAFE] beat=520 t=260150 state=CHAY mqtt=0 queue=5 dropped=0 sent=124
+10:16:00.174 > [MQTT] Dang ket noi toi broker...
+10:16:00.174 > [MQTT] Ket noi that bai, rc=-2 (thu lai sau 3s)
+10:16:02.188 > [SAFE] beat=524 t=262150 state=CHAY mqtt=0 queue=6 dropped=0 sent=124
+10:16:04.224 > [SAFE] beat=528 t=264150 state=CHAY mqtt=0 queue=7 dropped=0 sent=124
+10:16:04.224 > [MQTT] Dang ket noi toi broker...
+10:16:04.224 > [MQTT] Ket noi that bai, rc=-2 (thu lai sau 3s)
+10:16:06.116 > [SAFE] beat=532 t=266150 state=CHAY mqtt=0 queue=8 dropped=0 sent=124
+10:16:08.210 > [SAFE] beat=536 t=268150 state=CHAY mqtt=0 queue=9 dropped=0 sent=124
+10:16:08.210 > [MQTT] Dang ket noi toi broker...
+10:16:08.210 > [MQTT] Ket noi that bai, rc=-2 (thu lai sau 3s)
+10:16:10.295 > [SAFE] beat=540 t=270150 state=CHAY mqtt=0 queue=10 dropped=0 sent=124
+10:16:12.278 > [SAFE] beat=544 t=272150 state=CHAY mqtt=0 queue=10 dropped=1 sent=124
+10:16:12.278 > [MQTT] Dang ket noi toi broker...
+10:16:12.278 > [MQTT] Ket noi that bai, rc=-2 (thu lai sau 3s)
+10:16:14.114 > [SAFE] beat=548 t=274150 state=CHAY mqtt=0 queue=10 dropped=2 sent=124
+10:16:16.141 > [SAFE] beat=552 t=276150 state=CHAY mqtt=0 queue=10 dropped=3 sent=124
+10:16:16.141 > [MQTT] Dang ket noi toi broker...
+10:16:16.141 > [MQTT] Ket noi that bai, rc=-2 (thu lai sau 3s)
+10:16:18.164 > [SAFE] beat=556 t=278150 state=CHAY mqtt=0 queue=10 dropped=4 sent=124
+10:16:20.248 > [SAFE] beat=560 t=280150 state=CHAY mqtt=0 queue=10 dropped=5 sent=124
+10:16:20.248 > [MQTT] Dang ket noi toi broker...
+10:16:20.248 > [MQTT] Ket noi that bai, rc=-2 (thu lai sau 3s)
+10:16:22.223 > [SAFE] beat=564 t=282150 state=CHAY mqtt=0 queue=10 dropped=6 sent=124
+10:16:24.222 > [SAFE] beat=568 t=284150 state=CHAY mqtt=0 queue=10 dropped=7 sent=124
+10:16:24.222 > [MQTT] Dang ket noi toi broker...
+10:16:24.222 > [MQTT] Ket noi that bai, rc=-2 (thu lai sau 3s)
+10:16:26.250 > [SAFE] beat=572 t=286150 state=CHAY mqtt=0 queue=10 dropped=8 sent=124
+10:16:28.288 > [SAFE] beat=576 t=288150 state=CHAY mqtt=0 queue=10 dropped=9 sent=124
+10:16:28.288 > [MQTT] Dang ket noi toi broker...
+10:16:28.288 > [MQTT] Ket noi that bai, rc=-2 (thu lai sau 3s)
+10:16:30.266 > [SAFE] beat=580 t=290150 state=CHAY mqtt=0 queue=10 dropped=10 sent=124
+10:16:32.183 > [SAFE] beat=584 t=292150 state=CHAY mqtt=0 queue=10 dropped=11 sent=124
+10:16:32.183 > [MQTT] Dang ket noi toi broker...
+10:16:32.183 > [MQTT] Ket noi that bai, rc=-2 (thu lai sau 3s)
+10:16:34.172 > [SAFE] beat=588 t=294150 state=CHAY mqtt=0 queue=10 dropped=12 sent=124
+10:16:36.242 > [SAFE] beat=592 t=296150 state=CHAY mqtt=0 queue=10 dropped=13 sent=124
+10:16:36.242 > [MQTT] Dang ket noi toi broker...
+10:16:36.242 > [MQTT] Ket noi that bai, rc=-2 (thu lai sau 3s)
+10:16:38.211 > [SAFE] beat=596 t=298150 state=CHAY mqtt=0 queue=10 dropped=14 sent=124
+10:16:40.157 > [SAFE] beat=600 t=300150 state=CHAY mqtt=0 queue=10 dropped=15 sent=124
+10:16:40.157 > [MQTT] Dang ket noi toi broker...
+10:16:40.157 > [MQTT] Ket noi that bai, rc=-2 (thu lai sau 3s)
+10:16:42.278 > [SAFE] beat=604 t=302150 state=CHAY mqtt=0 queue=10 dropped=16 sent=124
+10:16:44.240 > [SAFE] beat=608 t=304150 state=CHAY mqtt=0 queue=10 dropped=17 sent=124
+10:16:44.240 > [MQTT] Dang ket noi toi broker...
+10:16:44.240 > [MQTT] Ket noi that bai, rc=-2 (thu lai sau 3s)
+10:16:46.136 > [SAFE] beat=612 t=306150 state=CHAY mqtt=0 queue=10 dropped=18 sent=124
+10:16:48.218 > [SAFE] beat=616 t=308150 state=CHAY mqtt=0 queue=10 dropped=19 sent=124
+10:16:48.218 > [MQTT] Dang ket noi toi broker...
+10:16:48.218 > [MQTT] Ket noi that bai, rc=-2 (thu lai sau 3s)
+10:16:50.222 > [SAFE] beat=620 t=310150 state=CHAY mqtt=0 queue=10 dropped=20 sent=124
+10:16:52.287 > [SAFE] beat=624 t=312150 state=CHAY mqtt=0 queue=10 dropped=21 sent=124
+10:16:52.287 > [MQTT] Dang ket noi toi broker...
+10:16:52.287 > [MQTT] Ket noi that bai, rc=-2 (thu lai sau 3s)
+10:16:54.277 > [SAFE] beat=628 t=314150 state=CHAY mqtt=0 queue=10 dropped=22 sent=124
+10:16:56.268 > [SAFE] beat=632 t=316150 state=CHAY mqtt=0 queue=10 dropped=23 sent=124
+10:16:56.268 > [MQTT] Dang ket noi toi broker...
+10:16:56.268 > [MQTT] Ket noi that bai, rc=-2 (thu lai sau 3s)
+10:16:58.260 > [SAFE] beat=636 t=318150 state=CHAY mqtt=0 queue=10 dropped=24 sent=124
+10:17:00.262 > [SAFE] beat=640 t=320150 state=CHAY mqtt=0 queue=10 dropped=25 sent=124
+10:17:00.262 > [MQTT] Dang ket noi toi broker...
+10:17:00.262 > [MQTT] Ket noi that bai, rc=-2 (thu lai sau 3s)
+10:17:02.255 > [SAFE] beat=644 t=322150 state=CHAY mqtt=0 queue=10 dropped=26 sent=124
+10:17:04.106 > [SAFE] beat=648 t=324150 state=CHAY mqtt=0 queue=10 dropped=27 sent=124
+10:17:04.106 > [MQTT] Dang ket noi toi broker...
+10:17:04.106 > [MQTT] Ket noi that bai, rc=-2 (thu lai sau 3s)
+10:17:06.176 > [SAFE] beat=652 t=326150 state=CHAY mqtt=0 queue=10 dropped=28 sent=124
+10:17:08.282 > [SAFE] beat=656 t=328150 state=CHAY mqtt=0 queue=10 dropped=29 sent=124
+10:17:08.282 > [MQTT] Dang ket noi toi broker...
+10:17:08.282 > [MQTT] Ket noi that bai, rc=-2 (thu lai sau 3s)
+10:17:10.292 > [SAFE] beat=660 t=330150 state=CHAY mqtt=0 queue=10 dropped=30 sent=124
+10:17:12.200 > [SAFE] beat=664 t=332150 state=CHAY mqtt=0 queue=10 dropped=31 sent=124
+10:17:12.200 > [MQTT] Dang ket noi toi broker...
+10:17:12.200 > [MQTT] Ket noi that bai, rc=-2 (thu lai sau 3s)
+10:17:14.119 > [SAFE] beat=668 t=334150 state=CHAY mqtt=0 queue=10 dropped=32 sent=124
+10:17:16.237 > [SAFE] beat=672 t=336150 state=CHAY mqtt=0 queue=10 dropped=33 sent=124
+10:17:16.237 > [MQTT] Dang ket noi toi broker...
+10:17:16.237 > [MQTT] Ket noi that bai, rc=-2 (thu lai sau 3s)
+10:17:18.222 > [SAFE] beat=676 t=338150 state=CHAY mqtt=0 queue=10 dropped=34 sent=124
+10:17:20.253 > [SAFE] beat=680 t=340150 state=CHAY mqtt=0 queue=10 dropped=35 sent=124
+10:17:20.253 > [MQTT] Dang ket noi toi broker...
+10:17:20.253 > [MQTT] Ket noi that bai, rc=-2 (thu lai sau 3s)
+10:17:22.229 > [SAFE] beat=684 t=342150 state=CHAY mqtt=0 queue=10 dropped=36 sent=124
+10:17:24.289 > [SAFE] beat=688 t=344150 state=CHAY mqtt=0 queue=10 dropped=37 sent=124
+10:17:24.289 > [MQTT] Dang ket noi toi broker...
+10:17:24.289 > [MQTT] Ket noi that bai, rc=-2 (thu lai sau 3s)
+10:17:26.206 > [SAFE] beat=692 t=346150 state=CHAY mqtt=0 queue=10 dropped=38 sent=124
+10:17:28.251 > [SAFE] beat=696 t=348150 state=CHAY mqtt=0 queue=10 dropped=39 sent=124
+10:17:28.251 > [MQTT] Dang ket noi toi broker...
+10:17:28.251 > [MQTT] Ket noi that bai, rc=-2 (thu lai sau 3s)
+10:17:30.299 > [SAFE] beat=700 t=350150 state=CHAY mqtt=0 queue=10 dropped=40 sent=124
+10:17:32.226 > [SAFE] beat=704 t=352150 state=CHAY mqtt=0 queue=10 dropped=41 sent=124
+10:17:32.226 > [MQTT] Dang ket noi toi broker...
+10:17:32.226 > [MQTT] Ket noi that bai, rc=-2 (thu lai sau 3s)
+10:17:34.203 > [SAFE] beat=708 t=354150 state=CHAY mqtt=0 queue=10 dropped=42 sent=124
+10:17:36.259 > [SAFE] beat=712 t=356150 state=CHAY mqtt=0 queue=10 dropped=43 sent=124
+10:17:36.259 > [MQTT] Dang ket noi toi broker...
+10:17:36.259 > [MQTT] Ket noi that bai, rc=-2 (thu lai sau 3s)
+10:17:38.300 > [SAFE] beat=716 t=358150 state=CHAY mqtt=0 queue=10 dropped=44 sent=124
+10:17:40.180 > [SAFE] beat=720 t=360150 state=CHAY mqtt=0 queue=10 dropped=45 sent=124
+10:17:40.180 > [MQTT] Dang ket noi toi broker...
+10:17:40.180 > [MQTT] Ket noi that bai, rc=-2 (thu lai sau 3s)
+10:17:42.228 > [SAFE] beat=724 t=362150 state=CHAY mqtt=0 queue=10 dropped=46 sent=124
+10:17:44.223 > [SAFE] beat=728 t=364150 state=CHAY mqtt=0 queue=10 dropped=47 sent=124
+10:17:44.223 > [MQTT] Dang ket noi toi broker...
+10:17:44.223 > [MQTT] Ket noi that bai, rc=-2 (thu lai sau 3s)
+10:17:46.125 > [SAFE] beat=732 t=366150 state=CHAY mqtt=0 queue=10 dropped=48 sent=124
+10:17:48.127 > [SAFE] beat=736 t=368150 state=CHAY mqtt=0 queue=10 dropped=49 sent=124
+10:17:48.127 > [MQTT] Dang ket noi toi broker...
+10:17:48.127 > [MQTT] Ket noi that bai, rc=-2 (thu lai sau 3s)
+10:17:50.237 > [SAFE] beat=740 t=370150 state=CHAY mqtt=0 queue=10 dropped=50 sent=124
+10:17:51.540 > [MQTT] Dang ket noi toi broker...
+10:17:51.540 > [MQTT] Da ket noi thanh cong!
+10:17:51.050 > [MQTT] Publish thanh cong seq=176
+10:17:51.052 > [MQTT] Publish thanh cong seq=177
+10:17:51.054 > [MQTT] Publish thanh cong seq=178
+10:17:51.056 > [MQTT] Publish thanh cong seq=179
+10:17:51.058 > [MQTT] Publish thanh cong seq=180
+10:17:51.060 > [MQTT] Publish thanh cong seq=181
+10:17:51.062 > [MQTT] Publish thanh cong seq=182
+10:17:51.064 > [MQTT] Publish thanh cong seq=183
+10:17:51.066 > [MQTT] Publish thanh cong seq=184
+10:17:51.068 > [MQTT] Publish thanh cong seq=185
+10:17:52.259 > [SAFE] beat=744 t=372150 state=CHAY mqtt=1 queue=0 dropped=50 sent=135
+10:17:52.259 > [MQTT] Publish thanh cong seq=186
+10:17:54.144 > [SAFE] beat=748 t=374150 state=CHAY mqtt=1 queue=0 dropped=50 sent=136
+10:17:54.144 > [MQTT] Publish thanh cong seq=187
+10:17:56.210 > [SAFE] beat=752 t=376150 state=CHAY mqtt=1 queue=0 dropped=50 sent=137
+10:17:56.210 > [MQTT] Publish thanh cong seq=188
+10:17:58.254 > [SAFE] beat=756 t=378150 state=CHAY mqtt=1 queue=0 dropped=50 sent=138
+10:17:58.254 > [MQTT] Publish thanh cong seq=189
+10:18:00.267 > [SAFE] beat=760 t=380150 state=CHAY mqtt=1 queue=0 dropped=50 sent=139
+10:18:00.267 > [MQTT] Publish thanh cong seq=190
+10:18:02.206 > [SAFE] beat=764 t=382150 state=CHAY mqtt=1 queue=0 dropped=50 sent=140
+10:18:02.206 > [MQTT] Publish thanh cong seq=191
+10:18:04.124 > [SAFE] beat=768 t=384150 state=CHAY mqtt=1 queue=0 dropped=50 sent=141
+10:18:04.124 > [MQTT] Publish thanh cong seq=192
+10:18:06.276 > [SAFE] beat=772 t=386150 state=CHAY mqtt=1 queue=0 dropped=50 sent=142
+10:18:06.276 > [MQTT] Publish thanh cong seq=193
+10:18:08.107 > [SAFE] beat=776 t=388150 state=CHAY mqtt=1 queue=0 dropped=50 sent=143
+10:18:08.107 > [MQTT] Publish thanh cong seq=194
+10:18:10.125 > [SAFE] beat=780 t=390150 state=CHAY mqtt=1 queue=0 dropped=50 sent=144
+10:18:10.125 > [MQTT] Publish thanh cong seq=195
+10:18:12.219 > [SAFE] beat=784 t=392150 state=CHAY mqtt=1 queue=0 dropped=50 sent=145
+10:18:12.219 > [MQTT] Publish thanh cong seq=196
+10:18:14.228 > [SAFE] beat=788 t=394150 state=CHAY mqtt=1 queue=0 dropped=50 sent=146
+10:18:14.228 > [MQTT] Publish thanh cong seq=197
+10:18:16.159 > [SAFE] beat=792 t=396150 state=CHAY mqtt=1 queue=0 dropped=50 sent=147
+10:18:16.159 > [MQTT] Publish thanh cong seq=198
+10:18:18.237 > [SAFE] beat=796 t=398150 state=CHAY mqtt=1 queue=0 dropped=50 sent=148
+10:18:18.237 > [MQTT] Publish thanh cong seq=199
+10:18:20.113 > [SAFE] beat=800 t=400150 state=CHAY mqtt=1 queue=0 dropped=50 sent=149
+10:18:20.113 > [MQTT] Publish thanh cong seq=200
+10:18:22.187 > [SAFE] beat=804 t=402150 state=CHAY mqtt=1 queue=0 dropped=50 sent=150
+10:18:22.187 > [MQTT] Publish thanh cong seq=201
+10:18:24.211 > [SAFE] beat=808 t=404150 state=CHAY mqtt=1 queue=0 dropped=50 sent=151
+10:18:24.211 > [MQTT] Publish thanh cong seq=202
+10:18:26.277 > [SAFE] beat=812 t=406150 state=CHAY mqtt=1 queue=0 dropped=50 sent=152
+10:18:26.277 > [MQTT] Publish thanh cong seq=203
+10:18:28.186 > [SAFE] beat=816 t=408150 state=CHAY mqtt=1 queue=0 dropped=50 sent=153
+10:18:28.186 > [MQTT] Publish thanh cong seq=204
+10:18:30.212 > [SAFE] beat=820 t=410150 state=CHAY mqtt=1 queue=0 dropped=50 sent=154
+10:18:30.212 > [MQTT] Publish thanh cong seq=205

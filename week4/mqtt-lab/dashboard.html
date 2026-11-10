@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bảng Điều Khiển Nhà Kính — MQTT Greenhouse Dashboard</title>
+  <script src="https://unpkg.com/mqtt/dist/mqtt.min.js"></script>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card-bg: #1e293b;
+      --card-border: #334155;
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+      --primary: #38bdf8;
+      --green: #22c55e;
+      --yellow: #eab308;
+      --red: #ef4444;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      padding: 24px;
+      line-height: 1.5;
+    }
+    .container { max-width: 1100px; margin: 0 auto; }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--card-border);
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    h1 { font-size: 1.5rem; font-weight: 700; color: #38bdf8; }
+    .author-badge {
+      font-size: 0.85rem;
+      background: #0369a1;
+      padding: 4px 12px;
+      border-radius: 9999px;
+      color: #e0f2fe;
+    }
+    .status-bar {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      background: var(--card-bg);
+      padding: 12px 20px;
+      border-radius: 12px;
+      border: 1px solid var(--card-border);
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+    }
+    .status-indicator {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+    .dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--red);
+      box-shadow: 0 0 8px currentColor;
+    }
+    .dot.ok { background: var(--green); color: var(--green); }
+    .dot.reconnect { background: var(--yellow); color: var(--yellow); }
+    .dot.lost { background: var(--red); color: var(--red); }
+    .fsm-badge {
+      margin-left: auto;
+      padding: 4px 16px;
+      border-radius: 8px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      font-size: 0.9rem;
+      background: #334155;
+    }
+    .fsm-CHAY { background: #15803d; color: #dcfce7; }
+    .fsm-DUNG { background: #475569; color: #f1f5f9; }
+    .fsm-LOI { background: #b91c1c; color: #fee2e2; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 20px;
+      position: relative;
+      transition: all 0.2s ease;
+    }
+    .card.stale { opacity: 0.45; filter: grayscale(60%); }
+    .card-title {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 8px;
+    }
+    .card-val {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #fff;
+    }
+    .card-unit { font-size: 1rem; color: var(--text-muted); font-weight: 400; margin-left: 4px; }
+    .card-sub { font-size: 0.75rem; color: var(--text-muted); margin-top: 6px; }
+    .log-panel {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 16px 20px;
+    }
+    .log-header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 12px;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+    .log-list {
+      background: #090d16;
+      border-radius: 8px;
+      padding: 12px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 0.8rem;
+      max-height: 240px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .log-row {
+      display: flex;
+      gap: 12px;
+      border-bottom: 1px solid #1e293b;
+      padding-bottom: 4px;
+    }
+    .log-time { color: var(--text-muted); min-width: 80px; }
+    .log-seq { color: var(--primary); min-width: 60px; }
+    .log-data { color: #cbd5e1; word-break: break-all; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div>
+        <h1>Trạm Quan Trắc Nhà Kính — MQTT Realtime</h1>
+        <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 4px;">
+          Bài 4 / CSE3069 · Điều khiển an toàn & giám sát luồng MQTT over WebSocket
+        </p>
+      </div>
+      <div class="author-badge">
+        Bùi Sỹ Việt Anh — 23110300
+      </div>
+    </header>
+
+    <!-- Status Bar (Gợi ý quy ước 3 màu của đề bài) -->
+    <div class="status-bar">
+      <div class="status-indicator">
+        <span id="conn-dot" class="dot lost"></span>
+        <span id="conn-text">Đang kết nối WebSocket broker...</span>
+      </div>
+      <div style="font-size: 0.85rem; color: var(--text-muted);" id="last-seen">
+        Chưa có gói tin
+      </div>
+      <div id="fsm-status" class="fsm-badge fsm-DUNG">
+        FSM: DỪNG
+      </div>
+    </div>
+
+    <!-- Live Gauges Grid -->
+    <div class="grid">
+      <div class="card" id="card-temp">
+        <div class="card-title">Nhiệt độ không khí</div>
+        <div class="card-val"><span id="val-temp">--</span><span class="card-unit">°C</span></div>
+        <div class="card-sub" id="sub-temp">Cảm biến I2C DHT11 (0x08)</div>
+      </div>
+
+      <div class="card" id="card-hum">
+        <div class="card-title">Độ ẩm tương đối</div>
+        <div class="card-val"><span id="val-hum">--</span><span class="card-unit">%</span></div>
+        <div class="card-sub" id="sub-hum">Khoảng đo tối ưu: 60 - 80%</div>
+      </div>
+
+      <div class="card" id="card-rain">
+        <div class="card-title">Cảm biến mưa</div>
+        <div class="card-val" id="val-rain" style="font-size: 1.5rem;">--</div>
+        <div class="card-sub">0 = Khô ráo · 1 = Có mưa</div>
+      </div>
+
+      <div class="card" id="card-rssi">
+        <div class="card-title">Chất lượng WiFi (RSSI)</div>
+        <div class="card-val"><span id="val-rssi">--</span><span class="card-unit">dBm</span></div>
+        <div class="card-sub" id="sub-rssi">Sóng mạng ESP32</div>
+      </div>
+
+      <div class="card" id="card-valid">
+        <div class="card-title">Chất lượng dữ liệu</div>
+        <div class="card-val" id="val-valid" style="font-size: 1.4rem; color: var(--yellow);">--</div>
+        <div class="card-sub" id="sub-valid">Cờ kiểm định: valid</div>
+      </div>
+    </div>
+
+    <!-- Log Panel -->
+    <div class="log-panel">
+      <div class="log-header">
+        <span>Nhật ký gói tin nhận được (Topic: VietAnh/greenhouse01/telemetry)</span>
+        <span id="packet-counter" style="color: var(--primary);">0 bản tin</span>
+      </div>
+      <div class="log-list" id="log-list">
+        <div class="log-row">
+          <span class="log-time">--:--:--</span>
+          <span class="log-seq">READY</span>
+          <span class="log-data">Chờ kết nối tới ws://localhost:9001 ...</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Cấu hình WebSocket MQTT (Port 9001 của Mosquitto Docker)
+    const WS_URL = 'ws://' + window.location.hostname + ':9001';
+    const TOPIC_TELE = 'VietAnh/greenhouse01/telemetry';
+    const TOPIC_STATUS = 'VietAnh/greenhouse01/status';
+
+    const connDot = document.getElementById('conn-dot');
+    const connText = document.getElementById('conn-text');
+    const fsmStatus = document.getElementById('fsm-status');
+    const lastSeenEl = document.getElementById('last-seen');
+    const counterEl = document.getElementById('packet-counter');
+    const logList = document.getElementById('log-list');
+
+    let packetCount = 0;
+    let lastPacketTime = null;
+
+    // Kết nối MQTT qua WebSocket
+    const client = mqtt.connect(WS_URL, {
+      username: 'vietanh',
+      password: 'vietanh23110300',
+      reconnectPeriod: 2000
+    });
+
+    client.on('connect', () => {
+      connDot.className = 'dot ok';
+      connText.textContent = 'Kết nối OK · Broker trực tuyến';
+      client.subscribe([TOPIC_TELE, TOPIC_STATUS]);
+    });
+
+    client.on('reconnect', () => {
+      connDot.className = 'dot reconnect';
+      connText.textContent = 'Đang nối lại...';
+    });
+
+    client.on('offline', () => {
+      connDot.className = 'dot lost';
+      connText.textContent = 'Mất kết nối broker';
+      setFailsafeUI(true);
+    });
+
+    client.on('message', (topic, message) => {
+      const now = new Date();
+      lastPacketTime = now;
+      lastSeenEl.textContent = 'Nhận lúc: ' + now.toLocaleTimeString();
+
+      if (topic === TOPIC_STATUS) {
+        const st = message.toString();
+        if (st === 'offline') {
+          connDot.className = 'dot lost';
+          connText.textContent = 'ESP32 ngắt kết nối (LWT offline)';
+          fsmStatus.textContent = 'FSM: DỪNG';
+          fsmStatus.className = 'fsm-badge fsm-DUNG';
+        }
+        return;
+      }
+
+      try {
+        const data = JSON.parse(message.toString());
+        packetCount++;
+        counterEl.textContent = packetCount + ' bản tin';
+
+        // Cập nhật giá trị đo (hỗ trợ phân biệt null và 0)
+        document.getElementById('val-temp').textContent = (data.temp !== null) ? data.temp.toFixed(1) : 'null';
+        document.getElementById('val-hum').textContent = (data.hum !== null) ? data.hum.toFixed(1) : 'null';
+        
+        let rainText = 'null';
+        if (data.rain === 0) rainText = 'Khô ráo (0)';
+        else if (data.rain === 1) rainText = 'Có mưa (1)';
+        document.getElementById('val-rain').textContent = rainText;
+
+        document.getElementById('val-rssi').textContent = data.rssi || '--';
+
+        // Cập nhật Valid & FSM
+        const validEl = document.getElementById('val-valid');
+        if (data.valid === true) {
+          validEl.textContent = 'HỢP LỆ';
+          validEl.style.color = 'var(--green)';
+          fsmStatus.textContent = 'FSM: CHẠY';
+          fsmStatus.className = 'fsm-badge fsm-CHAY';
+        } else {
+          validEl.textContent = 'LỖI SENSOR';
+          validEl.style.color = 'var(--red)';
+          fsmStatus.textContent = 'FSM: LỖI';
+          fsmStatus.className = 'fsm-badge fsm-LOI';
+        }
+
+        // Bỏ chế độ mờ stale
+        setFailsafeUI(false);
+
+        // Thêm vào nhật ký
+        appendLog(now.toLocaleTimeString(), '#' + data.seq, message.toString());
+      } catch (err) {
+        console.error('Lỗi parse JSON:', err);
+      }
+    });
+
+    function appendLog(time, seq, payload) {
+      const row = document.createElement('div');
+      row.className = 'log-row';
+      row.innerHTML = `<span class="log-time">${time}</span><span class="log-seq">${seq}</span><span class="log-data">${payload}</span>`;
+      logList.insertBefore(row, logList.firstChild);
+      if (logList.children.length > 20) logList.removeChild(logList.lastChild);
+    }
+
+    // Failsafe hiển thị: Quá 5 giây không có bản tin -> cảnh báo mờ số liệu
+    function setFailsafeUI(isStale) {
+      const cards = document.querySelectorAll('.card');
+      cards.forEach(card => {
+        if (isStale) card.classList.add('stale');
+        else card.classList.remove('stale');
+      });
+    }
+
+    setInterval(() => {
+      if (lastPacketTime && (new Date() - lastPacketTime > 5000)) {
+        connDot.className = 'dot reconnect';
+        connText.textContent = 'Dữ liệu quá hạn (>5s không có gói mới)';
+        setFailsafeUI(true);
+      }
+    }, 1000);
+  </script>
+</body>
+</html>

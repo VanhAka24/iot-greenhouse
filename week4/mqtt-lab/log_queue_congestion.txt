@@ -1,0 +1,84 @@
+10:44:58.120 > ets Jul 29 2019 12:21:46
+10:44:58.120 > rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+10:44:58.125 > configsip: 0, SPIWP:0xee
+10:44:58.128 > mode:DIO, clock div:2
+10:44:58.200 > [WiFi] Dang ket noi toi SSID: Greenhouse_WiFi...
+10:44:59.450 > [WiFi] Ket noi thanh cong! IP: 192.168.1.155
+10:44:59.600 > [MQTT] Dang ket noi toi broker...
+10:44:59.810 > [MQTT] Da ket noi thanh cong!
+10:44:59.820 > [SYS] He thong khoi tao thanh cong, cac task bat dau chay (MQTT_SLOW_TEST=1).
+10:45:02.106 > [SAFE] beat=4 t=2000 state=CHAY mqtt=1 queue=0 dropped=0 sent=1
+10:45:02.106 > [MQTT] Publish thanh cong seq=1 (MQTT_SLOW_TEST delay 8000ms...)
+10:45:04.146 > [SAFE] beat=8 t=4000 state=CHAY mqtt=1 queue=1 dropped=0 sent=1
+10:45:06.224 > [SAFE] beat=12 t=6000 state=CHAY mqtt=1 queue=2 dropped=0 sent=1
+10:45:08.114 > [SAFE] beat=16 t=8000 state=CHAY mqtt=1 queue=3 dropped=0 sent=1
+10:45:10.134 > [SAFE] beat=20 t=10000 state=CHAY mqtt=1 queue=3 dropped=0 sent=2
+10:45:10.134 > [MQTT] Publish thanh cong seq=2 (MQTT_SLOW_TEST delay 8000ms...)
+10:45:12.241 > [SAFE] beat=24 t=12000 state=CHAY mqtt=1 queue=4 dropped=0 sent=2
+10:45:14.220 > [SAFE] beat=28 t=14000 state=CHAY mqtt=1 queue=5 dropped=0 sent=2
+10:45:16.189 > [SAFE] beat=32 t=16000 state=CHAY mqtt=1 queue=6 dropped=0 sent=2
+10:45:18.235 > [SAFE] beat=36 t=18000 state=CHAY mqtt=1 queue=6 dropped=0 sent=3
+10:45:18.235 > [MQTT] Publish thanh cong seq=3 (MQTT_SLOW_TEST delay 8000ms...)
+10:45:20.178 > [SAFE] beat=40 t=20000 state=CHAY mqtt=1 queue=7 dropped=0 sent=3
+10:45:22.243 > [SAFE] beat=44 t=22000 state=CHAY mqtt=1 queue=8 dropped=0 sent=3
+10:45:24.211 > [SAFE] beat=48 t=24000 state=CHAY mqtt=1 queue=9 dropped=0 sent=3
+10:45:26.100 > [SAFE] beat=52 t=26000 state=CHAY mqtt=1 queue=9 dropped=0 sent=4
+10:45:26.100 > [MQTT] Publish thanh cong seq=4 (MQTT_SLOW_TEST delay 8000ms...)
+10:45:28.223 > [SAFE] beat=56 t=28000 state=CHAY mqtt=1 queue=10 dropped=0 sent=4
+10:45:30.173 > [SAFE] beat=60 t=30000 state=CHAY mqtt=1 queue=10 dropped=1 sent=4
+10:45:32.153 > [SAFE] beat=64 t=32000 state=CHAY mqtt=1 queue=10 dropped=2 sent=4
+10:45:34.169 > [SAFE] beat=68 t=34000 state=CHAY mqtt=1 queue=9 dropped=3 sent=5
+10:45:34.169 > [MQTT] Publish thanh cong seq=5 (MQTT_SLOW_TEST delay 8000ms...)
+10:45:36.209 > [SAFE] beat=72 t=36000 state=CHAY mqtt=1 queue=10 dropped=3 sent=5
+10:45:38.170 > [SAFE] beat=76 t=38000 state=CHAY mqtt=1 queue=10 dropped=4 sent=5
+10:45:40.154 > [SAFE] beat=80 t=40000 state=CHAY mqtt=1 queue=10 dropped=5 sent=5
+10:45:42.218 > [SAFE] beat=84 t=42000 state=CHAY mqtt=1 queue=9 dropped=6 sent=6
+10:45:42.218 > [MQTT] Publish thanh cong seq=6 (MQTT_SLOW_TEST delay 8000ms...)
+10:45:44.208 > [SAFE] beat=88 t=44000 state=CHAY mqtt=1 queue=10 dropped=6 sent=6
+10:45:46.117 > [SAFE] beat=92 t=46000 state=CHAY mqtt=1 queue=10 dropped=7 sent=6
+10:45:48.171 > [SAFE] beat=96 t=48000 state=CHAY mqtt=1 queue=10 dropped=8 sent=6
+10:45:50.174 > [SAFE] beat=100 t=50000 state=CHAY mqtt=1 queue=9 dropped=9 sent=7
+10:45:50.174 > [MQTT] Publish thanh cong seq=7 (MQTT_SLOW_TEST delay 8000ms...)
+10:45:52.187 > [SAFE] beat=104 t=52000 state=CHAY mqtt=1 queue=10 dropped=9 sent=7
+10:45:54.131 > [SAFE] beat=108 t=54000 state=CHAY mqtt=1 queue=10 dropped=10 sent=7
+10:45:56.183 > [SAFE] beat=112 t=56000 state=CHAY mqtt=1 queue=10 dropped=11 sent=7
+10:45:58.168 > [SAFE] beat=116 t=58000 state=CHAY mqtt=1 queue=9 dropped=12 sent=8
+10:45:58.168 > [MQTT] Publish thanh cong seq=8 (MQTT_SLOW_TEST delay 8000ms...)
+10:46:00.210 > [SAFE] beat=120 t=60000 state=CHAY mqtt=1 queue=10 dropped=12 sent=8
+10:46:02.116 > [SAFE] beat=124 t=62000 state=CHAY mqtt=1 queue=10 dropped=13 sent=8
+10:46:04.143 > [SAFE] beat=128 t=64000 state=CHAY mqtt=1 queue=10 dropped=14 sent=8
+10:46:06.213 > [SAFE] beat=132 t=66000 state=CHAY mqtt=1 queue=9 dropped=15 sent=9
+10:46:06.213 > [MQTT] Publish thanh cong seq=9 (MQTT_SLOW_TEST delay 8000ms...)
+10:46:08.202 > [SAFE] beat=136 t=68000 state=CHAY mqtt=1 queue=10 dropped=15 sent=9
+10:46:10.185 > [SAFE] beat=140 t=70000 state=CHAY mqtt=1 queue=10 dropped=16 sent=9
+10:46:12.236 > [SAFE] beat=144 t=72000 state=CHAY mqtt=1 queue=10 dropped=17 sent=9
+10:46:14.196 > [SAFE] beat=148 t=74000 state=CHAY mqtt=1 queue=9 dropped=18 sent=10
+10:46:14.196 > [MQTT] Publish thanh cong seq=10 (MQTT_SLOW_TEST delay 8000ms...)
+10:46:16.209 > [SAFE] beat=152 t=76000 state=CHAY mqtt=1 queue=10 dropped=18 sent=10
+10:46:18.155 > [SAFE] beat=156 t=78000 state=CHAY mqtt=1 queue=10 dropped=19 sent=10
+10:46:20.160 > [SAFE] beat=160 t=80000 state=CHAY mqtt=1 queue=10 dropped=20 sent=10
+10:46:22.104 > [SAFE] beat=164 t=82000 state=CHAY mqtt=1 queue=9 dropped=21 sent=11
+10:46:22.104 > [MQTT] Publish thanh cong seq=11 (MQTT_SLOW_TEST delay 8000ms...)
+10:46:24.161 > [SAFE] beat=168 t=84000 state=CHAY mqtt=1 queue=10 dropped=21 sent=11
+10:46:26.171 > [SAFE] beat=172 t=86000 state=CHAY mqtt=1 queue=10 dropped=22 sent=11
+10:46:28.196 > [SAFE] beat=176 t=88000 state=CHAY mqtt=1 queue=10 dropped=23 sent=11
+10:46:30.191 > [SAFE] beat=180 t=90000 state=CHAY mqtt=1 queue=9 dropped=24 sent=12
+10:46:30.191 > [MQTT] Publish thanh cong seq=12 (MQTT_SLOW_TEST delay 8000ms...)
+10:46:32.147 > [SAFE] beat=184 t=92000 state=CHAY mqtt=1 queue=10 dropped=24 sent=12
+10:46:34.209 > [SAFE] beat=188 t=94000 state=CHAY mqtt=1 queue=10 dropped=25 sent=12
+10:46:36.112 > [SAFE] beat=192 t=96000 state=CHAY mqtt=1 queue=10 dropped=26 sent=12
+10:46:38.207 > [SAFE] beat=196 t=98000 state=CHAY mqtt=1 queue=9 dropped=27 sent=13
+10:46:38.207 > [MQTT] Publish thanh cong seq=13 (MQTT_SLOW_TEST delay 8000ms...)
+10:46:40.122 > [SAFE] beat=200 t=100000 state=CHAY mqtt=1 queue=10 dropped=27 sent=13
+10:46:42.221 > [SAFE] beat=204 t=102000 state=CHAY mqtt=1 queue=10 dropped=28 sent=13
+10:46:44.168 > [SAFE] beat=208 t=104000 state=CHAY mqtt=1 queue=10 dropped=29 sent=13
+10:46:46.234 > [SAFE] beat=212 t=106000 state=CHAY mqtt=1 queue=9 dropped=30 sent=14
+10:46:46.234 > [MQTT] Publish thanh cong seq=14 (MQTT_SLOW_TEST delay 8000ms...)
+10:46:48.144 > [SAFE] beat=216 t=108000 state=CHAY mqtt=1 queue=10 dropped=30 sent=14
+10:46:50.199 > [SAFE] beat=220 t=110000 state=CHAY mqtt=1 queue=10 dropped=31 sent=14
+10:46:52.190 > [SAFE] beat=224 t=112000 state=CHAY mqtt=1 queue=10 dropped=32 sent=14
+10:46:54.101 > [SAFE] beat=228 t=114000 state=CHAY mqtt=1 queue=9 dropped=33 sent=15
+10:46:54.101 > [MQTT] Publish thanh cong seq=15 (MQTT_SLOW_TEST delay 8000ms...)
+10:46:56.195 > [SAFE] beat=232 t=116000 state=CHAY mqtt=1 queue=10 dropped=33 sent=15
+10:46:58.152 > [SAFE] beat=236 t=118000 state=CHAY mqtt=1 queue=10 dropped=34 sent=15
+10:47:00.106 > [SAFE] beat=240 t=120000 state=CHAY mqtt=1 queue=10 dropped=35 sent=15

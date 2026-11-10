@@ -1,0 +1,6 @@
+# File mẫu lưu mật khẩu đã được mã hóa bởi mosquitto_passwd
+# Tạo mật khẩu thật bằng lệnh:
+#   docker run --rm -v ${PWD}/mosquitto/config:/mosquitto/config eclipse-mosquitto:2 mosquitto_passwd -c -b /mosquitto/config/passwd vietanh 12345678
+# KHÔNG commit file passwd chứa hash thật vào Git!
+vietanh:$7$101$examplehash...
+
